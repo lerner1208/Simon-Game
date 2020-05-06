@@ -17,11 +17,32 @@ function nextSequence(){
     userClickedPattern = [];
     var randomNumber = Math.floor(Math.random()*4);
     var randomChosenColor = buttonColors[randomNumber];
+    var time = 0;
     gameLevel++;
     $("#level-title").text("Level " + gameLevel);
     
+
+    if(gamePattern.length > 0){
+        for(i = 0 ; i < gamePattern.length ; i++){
+            delay(i);
+        }
+    }
+
+    function delay(i) {
+    setTimeout(function(){
+        var prevColor = gamePattern[i];
+        $('#' + prevColor).fadeIn(100).fadeOut(100).fadeIn(100);
+        playSound(prevColor);
+        console.log(gamePattern);
+        console.log("prev:" + gamePattern[i]);
+    }, i * 300);
+    }
+
+    setTimeout(function(){
     $('#' + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
     playSound(randomChosenColor);
+}, gamePattern.length * 300);
+
 
     gamePattern.push(randomChosenColor);
 }
