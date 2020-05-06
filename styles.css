@@ -11,13 +11,11 @@ body {
 }
 
 #footer{
-  /* padding: 5% 15%; */
   text-align: center;
 }
 
 
 .top{
-  /* height: 200px; */
   margin: 2%;
 }
 
@@ -25,7 +23,6 @@ body {
   display: block;
   width: 50%;
   margin: auto;
-
 }
 
 .startBtn{
@@ -82,4 +79,75 @@ body {
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
+}
+
+@media (max-width:1013px){
+  .container {
+    display: block;
+    width: 100%;
+    margin: auto;
+  }
+
+  .btn {
+    margin-top: 0;
+    padding: 0;
+    display: inline-block;
+    height: 400px;
+    width: 400px;
+    border: 10px solid black;
+    border-radius: 20%;
+  }
+
+  .red {
+    background-color: red;
+    border-top-right-radius: 100%;
+  }
+  
+  .green {
+    background-color: green;
+    border-top-left-radius: 100%;
+  }
+  
+  .blue {
+    background-color: blue;
+    border-bottom-right-radius: 100%;
+  }
+  
+  .yellow {
+    background-color: yellow;
+    border-bottom-left-radius: 100%;
+  }
+
+  #level-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 5rem;
+    margin:  5%;
+    color: #FEF2BF;
+  }
+
+  .startBtn{
+    margin: 10%;
+    height: 100px;
+    width: 250px;
+    font-size: large;
+    background-color: rgb(243, 213, 79);
+    border-radius: 10%;
+  }
+
+  .startBtn:hover{
+    margin: 10%;
+    height: 100px;
+    width: 250px;
+    font-size: large;
+    background-color: rgb(243, 213, 79);
+    border-radius: 10%;
+  }
+
+  #footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 10% auto;
+  }
+  
 }
