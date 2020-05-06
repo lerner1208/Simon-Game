@@ -6,20 +6,23 @@ var buttonColors = ["red", "blue", "green", "yellow"];
 
 
 
-$(document).on("keypress",function(){
-    nextSequence();       
+$(".startBtn").on("click",function(){
+    $(".startBtn").animate({opacity:0, },100);
+    $(".startBtn").prop("disabled", true);
+    nextSequence();
 });
+
 
 function nextSequence(){
     userClickedPattern = [];
-
     var randomNumber = Math.floor(Math.random()*4);
     var randomChosenColor = buttonColors[randomNumber];
-
     gameLevel++;
     $("#level-title").text("Level " + gameLevel);
+    
     $('#' + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
     playSound(randomChosenColor);
+
     gamePattern.push(randomChosenColor);
 }
 
@@ -56,18 +59,22 @@ function checkAnswer(currentLevel){
         }
         else{
             console.log("Wrong")
-
             playSound("wrong");
             $("body").addClass("game-over");
             setTimeout(function(){ $("body").removeClass("game-over"); }, 200);
-            $("#level-title").html("Game Over <br/><br/> Press Any Key and Try Again");
+            $("#level-title").html("Game Over");
+            $(".startBtn").text("Restart Game");
             startOver();
         }
-
 }
+
+
 
 function startOver(){
     gameLevel = 0;
     gamePattern = [];
     userClickedPattern = [];
+
+    $(".startBtn").animate({opacity:100, },100);
+    $(".startBtn").prop("disabled", false);
 }
