@@ -7,7 +7,7 @@ var buttonColors = ["red", "blue", "green", "yellow"];
 
 
 $(".startBtn").on("click",function(){
-    $(".startBtn").animate({opacity:0, },100);
+    $(".startBtn").animate({opacity:0, },0);
     $(".startBtn").prop("disabled", true);
     nextSequence();
 });
@@ -35,13 +35,13 @@ function nextSequence(){
         playSound(prevColor);
         console.log(gamePattern);
         console.log("prev:" + gamePattern[i]);
-    }, i * 300);
+    }, i * 400);
     }
 
     setTimeout(function(){
     $('#' + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
     playSound(randomChosenColor);
-}, gamePattern.length * 300);
+}, gamePattern.length * 400);
 
 
     gamePattern.push(randomChosenColor);
@@ -96,6 +96,6 @@ function startOver(){
     gamePattern = [];
     userClickedPattern = [];
 
-    $(".startBtn").animate({opacity:100, },100);
+    $(".startBtn").animate({opacity:100, },0);
     $(".startBtn").prop("disabled", false);
 }
