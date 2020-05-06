@@ -82,6 +82,11 @@ body {
 }
 
 @media (max-width:1013px){
+  .top{
+    margin: 2%;
+    height: 600px;
+  }
+
   .container {
     display: block;
     width: 100%;
@@ -119,8 +124,10 @@ body {
   }
 
   #level-title {
+    height: 40%;
     font-family: 'Press Start 2P', cursive;
     font-size: 5rem;
+    line-height: 150%;
     margin:  5%;
     color: #FEF2BF;
   }
@@ -128,8 +135,10 @@ body {
   .startBtn{
     margin: 10%;
     height: 100px;
-    width: 250px;
-    font-size: large;
+    width: 300px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    border-color: black;
     background-color: rgb(243, 213, 79);
     border-radius: 10%;
   }
@@ -137,13 +146,16 @@ body {
   .startBtn:hover{
     margin: 10%;
     height: 100px;
-    width: 250px;
-    font-size: large;
+    width: 300px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    border-color: black;
     background-color: rgb(243, 213, 79);
     border-radius: 10%;
   }
 
   #footer{
+    font-size: 2.5rem;
     position: absolute;
     bottom: 0;
     width: 100%;
